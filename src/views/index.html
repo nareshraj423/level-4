@@ -1,0 +1,66 @@
+<html>
+
+<head>
+	<title>Node.js Chat</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<style>
+		body {
+			margin-top: 30px;
+		}
+
+		#messageArea {
+			display: none;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div id="userFormArea" class="row">
+			<div class="col-md-12">
+				<form id="userForm">
+					<div class="form-group">
+						<span class="badge" id="userError"></span>
+						<input class="form-control" id="username" placeholder="Enter Username" />
+						<br />
+						<input type="submit" class="btn btn-primary" value="Login" />
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="messageArea" class="row">
+			<div class="col-md-4">
+				<div class="well">
+					<h3>Online Users</h3>
+					<ul class="list-group" id="users"></ul>
+				</div>
+			</div>
+			<div class="col-md-8">
+				<strong id="userDisplay"></strong>
+				<div class="chat" id="chat">
+				</div>
+				<form id="messageForm">
+					<div class="form-group">
+						<span class="badge" id="msgStatus"></span>
+						<textarea class="form-control" id="message" placeholder="Enter text.. Hit Send button."></textarea>
+						<br/>
+						<input type="submit" class="btn btn-primary" value="Send" />
+					</div>
+				</form>
+			</div>
+			<div class="col-md-8">
+				<form id="logOut">
+					<div class="form-group">
+						<input type="submit" class="btn btn-danger" value="Logout" />
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="/js/chat-ui.js"></script>
+</body>
+
+</html>
